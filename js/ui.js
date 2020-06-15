@@ -11,8 +11,19 @@ class Interface {
   buildSelect() {
     compareAPI.getCoinsAPI()
       .then(coins => {
-        console.log(coins);
         
+        //create select for options
+        const select = document.getElementById('criptomoneda');
+        
+        //get coins in array
+        for (const [key, value] of Object.entries(coins.coins.Data)) {
+          //add Symbol and Name options
+          const option = document.createElement('option');
+          option.value = value.Symbol;
+          option.appendChild(document.createTextNode(value.CoinName));
+          
+          select.appendChild(option);
+        }
       })
   }
 
