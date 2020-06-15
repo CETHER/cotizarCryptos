@@ -1,5 +1,20 @@
 //Class UI
 class Interface {
+  constructor(){
+    this.init();
+  }
+
+  init(){
+    this.buildSelect();
+  }
+
+  buildSelect() {
+    compareAPI.getCoinsAPI()
+      .then(coins => {
+        console.log(coins);
+        
+      })
+  }
 
   showMessage(message, classes) {
     const div = document.createElement('div');

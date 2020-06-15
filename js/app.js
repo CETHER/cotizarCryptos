@@ -1,4 +1,5 @@
 //Instances
+const compareAPI = new API('92a216c13996f7edb2983a0c5ae42e26aad6dd6026dd95b65273d7c884ed8a15');
 const interface = new Interface();
 
 //Read form
