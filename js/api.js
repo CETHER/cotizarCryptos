@@ -13,8 +13,18 @@ class API {
     //response json
     const coins = await urlGetCoins.json();
     
-    return {
-      coins
-    }
+    return {coins};
+  }
+
+  async getValues(coin, criptoCoin) {
+    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptoCoin}&tsyms=${coin}&api_key=${this.apikey}`;
+
+    //consult rest API
+    const urlGetCoin = await fetch(url);
+
+    //response json
+    const result = urlGetCoin.json();
+
+    return {result};
   }
 }

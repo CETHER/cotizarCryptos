@@ -32,7 +32,9 @@ function validarFormulario(coinSelected, criptoCoinSelected) {
     interface.showMessage('Ambos campos son obligatorios', 'alert bg-danger text-center');
 
   } else {
-    console.log('todo bien');
-    
+    compareAPI.getValues(coinSelected, criptoCoinSelected)
+      .then(data => {
+        console.log(data); 
+      })
   }
 }
