@@ -16,14 +16,14 @@ class API {
     return {coins};
   }
 
-  async getValues(coin, criptoCoin) {
-    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptoCoin}&tsyms=${coin}&api_key=${this.apikey}`;
+  async getValues(coin, cryptoCoin) {
+    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoCoin}&tsyms=${coin}&api_key=${this.apikey}`;
 
     //consult rest API
     const urlGetCoin = await fetch(url);
 
     //response json
-    const result = urlGetCoin.json();
+    const result = await urlGetCoin.json();
 
     return {result};
   }
