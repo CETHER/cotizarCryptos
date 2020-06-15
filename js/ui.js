@@ -49,7 +49,8 @@ class Interface {
     const price = dataCoin.PRICE.toFixed(2);
     const percent = dataCoin.CHANGEPCTDAY.toFixed(2);
     const updated = new Date(dataCoin.LASTUPDATE * 1000).toLocaleDateString('es-MX');
-
+    resultados.innerHTML = '';
+    
     //build template
     let templateHTML = `
       <div class="card bg-warning">
@@ -62,9 +63,17 @@ class Interface {
         </div>
       </div>
     `
+    this.hideShowSpinner('block');
 
     //insert result
-    document.getElementById('resultados').innerHTML = templateHTML;
+    setTimeout(() => {
+      this.hideShowSpinner('none');
+      resultados.innerHTML = templateHTML;
+    }, 3000);
+  }
 
+  hideShowSpinner(view){
+    const spinner = document.querySelector('.contenido-spinner');
+    spinner.style.display = view;
   }
 }

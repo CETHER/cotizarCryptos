@@ -6,6 +6,7 @@ const interface = new Interface();
 const form = document.getElementById('formulario');
 const coinSelect = document.getElementById('moneda');
 const cryptoCoinSelect = document.getElementById('criptomoneda');
+const resultados = document.getElementById('resultados');
 
 //event Listeners
 form.addEventListener('submit', sendForm);
